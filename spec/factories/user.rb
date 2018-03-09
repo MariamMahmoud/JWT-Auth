@@ -4,7 +4,7 @@ FactoryBot.define do
     factory :user do
         first_name { Faker::Name.first_name }
         last_name  { Faker::Name.last_name }
-        avatar Rack::Test::UploadedFile.new(File.open(File.join(Rails.root, '/spec/my_files/index.png')))
+        avatar Rack::Test::UploadedFile.new(File.open(File.join(Rails.root, '/spec/my_files/index.jpeg')))
         country_code "US"
         phone_number "+201100363111"#{Faker::Base.numerify('+2###########')}
         gender "male" 

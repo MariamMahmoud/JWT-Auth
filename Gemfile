@@ -32,7 +32,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'phonelib'
 
 # Use country code gem for country code validations
-gem 'iso_country_codes'
+gem 'countries'
 
 # Use responders to dry up your app
 gem "responders"
@@ -49,7 +49,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.7'
   gem 'factory_bot_rails'
-  gem 'shoulda-matchers'  
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 group :development do
@@ -61,7 +61,6 @@ end
 
 group :test do
   gem 'faker'
-  gem 'database_cleaner'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

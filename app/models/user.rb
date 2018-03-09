@@ -5,17 +5,19 @@ class User < ActiveRecord::Base
     has_secure_password 
     mount_uploader :avatar, AvatarUploader
 
-    # Relations
+    # Associations
     has_many :statuses
     
     # Validations
     validates :phone_number, phone: true
-    validates_uniqueness_of :phone_number, :email
+    validates_uniqueness_of :phone_number
+    validates_uniqueness_of :email, if: Proc.new { |a| a.email.present?}
+    
     validates_presence_of :first_name, :last_name, :country_code, :phone_number, :gender, :birth_date, :avatar, :password_digest
     validates_format_of :birth_date, :with => /\d{4}\-\d{2}\-\d{2}/, :message => "Date must be in the following format: YYYY-MM-DD"
     
     # Custome Validations
-    # validate :country_code_existance
+    validate :country_code_existance
     validate :phone_number_format
     validate :birth_date_in_the_past
 
@@ -26,8 +28,8 @@ class User < ActiveRecord::Base
             self.errors.add(:phone_number,"must be in E.164 format i.e. +xxxxxxxxxxx")
         end
     end
-    def country_code_existance
-        unless IsoCountryCodes.find(self.country_code.try(:downcase)).present?
+    def country_code_existance 
+        unless ISO3166::Country.new(self.country_code.try(:downcase))
             self.errors.add(:country_code,"does not exist")
         end
     end

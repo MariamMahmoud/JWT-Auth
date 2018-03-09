@@ -9,5 +9,6 @@ FactoryBot.define do
         phone_number "+201100363111"#{Faker::Base.numerify('+2###########')}
         gender "male" 
         birth_date "1992-05-20"
+        password "P@ssword"
     end
 end

@@ -1,5 +1,7 @@
 class StatusesController < ApplicationController
 
+    # POST /statuses
+    # params [status] String
     def create
         @status = Status.new(status_params)
         @status.user_id = @current_user.id

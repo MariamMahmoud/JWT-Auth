@@ -1,0 +1,805 @@
+{
+	"variables": [],
+	"info": {
+		"name": "cogntiv-task-apis",
+		"_postman_id": "b984f271-4e0d-4063-f66d-1fa852d1fc4d",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login Api",
+			"request": {
+				"url": "localhost:3000/auth/login",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "phone_number",
+							"value": "+201100363195",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "7amada",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Params:\nuser[phone_number]\nuser[password]\n\nresponse\nauth_token =>token created for user, expires in 24 hours\nmessage => success message upon login"
+			},
+			"response": [
+				{
+					"id": "e677edd5-3b39-4a17-91fe-850c3dd5fde2",
+					"name": "Success Login Api Response",
+					"originalRequest": {
+						"url": "localhost:3000/auth/login",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phone_number",
+									"value": "+201100363195",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "7amada",
+									"description": "",
+									"type": "text"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "cache-control",
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "etag",
+							"key": "etag",
+							"value": "W/\"1c9cab6ac7fa3974ba65dcafd063faca\"",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"name": "transfer-encoding",
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "x-request-id",
+							"key": "x-request-id",
+							"value": "6c9b788a-5e70-464e-a810-450264b020b9",
+							"description": "Custom header"
+						},
+						{
+							"name": "x-runtime",
+							"key": "x-runtime",
+							"value": "0.175398",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"responseTime": 193,
+					"body": "{\"auth_token\":\"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE1MjA2OTQ4MTN9.ix4WoK_XRz8rSrY_SjQkAScErzVk7BigQh5rcYIWktg\",\"message\":\"Login Successful\"}"
+				},
+				{
+					"id": "c9e573ab-c1d6-44d1-8ddd-0b9817f87f00",
+					"name": "Failed  Login Api Response",
+					"originalRequest": {
+						"url": "localhost:3000/auth/login",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phone_number",
+									"value": "+201100363195",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "7amad7",
+									"description": "",
+									"type": "text"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "cache-control",
+							"key": "cache-control",
+							"value": "no-cache",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "transfer-encoding",
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "x-request-id",
+							"key": "x-request-id",
+							"value": "492f62c9-137b-4f9a-961e-ff36f93e42f4",
+							"description": "Custom header"
+						},
+						{
+							"name": "x-runtime",
+							"key": "x-runtime",
+							"value": "0.092461",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"responseTime": 114,
+					"body": "{\"error\":{\"user_authentication\":[\"Invalid credentials\"]}}"
+				}
+			]
+		},
+		{
+			"name": "Registration Api",
+			"request": {
+				"url": "localhost:3000/auth/register",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user[first_name]",
+							"value": "ahmed",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "user[last_name]",
+							"value": "ali",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "user[avatar]",
+							"value": "",
+							"description": "",
+							"type": "file"
+						},
+						{
+							"key": "user[birth_date]",
+							"value": "1992-05-20",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "user[gender]",
+							"value": "male",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "user[phone_number]",
+							"value": "+201100363195",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "user[email]",
+							"value": "joe2@doe.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "user[country_code]",
+							"value": "us",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "user[password]",
+							"value": "7amada",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Body:\nmandatory:\nuser[first_name] : string\nuser[:last_name] :string\nuser[:phone_number] :string, unique\nuser[:avatar] :file , png, jpeg, jpg\nuser[:country_code] :string\nuser[:gender] :string\nuser[:password]\noptional:\nuser[email] :string, unique\n"
+			},
+			"response": [
+				{
+					"id": "635fd5f3-abc8-4740-95fe-78771d1ca788",
+					"name": "Registration Success Response",
+					"originalRequest": {
+						"url": "localhost:3000/auth/register",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user[first_name]",
+									"value": "ahmed",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "user[last_name]",
+									"value": "ali",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "user[avatar]",
+									"description": "",
+									"type": "file",
+									"src": {
+										"0": {}
+									}
+								},
+								{
+									"key": "user[birth_date]",
+									"value": "1992-05-20",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "user[gender]",
+									"value": "male",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "user[phone_number]",
+									"value": "+20110036319",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "user[email]",
+									"value": "joe2@doe.com",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "user[country_code]",
+									"value": "us",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "user[password]",
+									"value": "7amada",
+									"description": "",
+									"type": "text"
+								}
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "cache-control",
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "etag",
+							"key": "etag",
+							"value": "W/\"9f9936102d8903f4764ea65cdb144891\"",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"name": "location",
+							"key": "location",
+							"value": "http://localhost:3000/users/4",
+							"description": "Used in redirection, or when a new resource has been created."
+						},
+						{
+							"name": "transfer-encoding",
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "x-request-id",
+							"key": "x-request-id",
+							"value": "19f387ec-2a0a-44e8-bb2e-5e740fbb54af",
+							"description": "Custom header"
+						},
+						{
+							"name": "x-runtime",
+							"key": "x-runtime",
+							"value": "1.200857",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"responseTime": 1267,
+					"body": "{\"id\":4,\"first_name\":\"ahmed\",\"last_name\":\"ali\",\"country_code\":\"us\",\"phone_number\":\"+201100363195\",\"gender\":\"male\",\"birth_date\":\"1992-05-20\",\"avatar\":{\"url\":\"/uploads/user/avatar/4/index.png\"},\"email\":\"joe2@doe.com\",\"password_digest\":\"$2a$10$vTeP0WqiW1xwvSGqOHFlE.nH0INxLpxlXdVSv1cem20OSUPSDsyrK\",\"created_at\":\"2018-03-09T15:10:10.000Z\",\"updated_at\":\"2018-03-09T15:10:10.000Z\"}"
+				},
+				{
+					"id": "afc5b28d-bbca-48d9-a3e1-e165c25fb08d",
+					"name": "Failed Registration Response example",
+					"originalRequest": {
+						"url": "localhost:3000/auth/register",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user[first_name]",
+									"value": "ahmed",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "user[last_name]",
+									"value": "ali",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "user[avatar]",
+									"description": "",
+									"type": "file",
+									"src": {
+										"0": {}
+									}
+								},
+								{
+									"key": "user[birth_date]",
+									"value": "1992-05-20",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "user[gender]",
+									"value": "male",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "user[phone_number]",
+									"value": "+201100363195",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "user[email]",
+									"value": "joe2@doe.com",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "user[country_code]",
+									"value": "us",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "user[password]",
+									"value": "7amada",
+									"description": "",
+									"type": "text"
+								}
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "cache-control",
+							"key": "cache-control",
+							"value": "no-cache",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "transfer-encoding",
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "x-request-id",
+							"key": "x-request-id",
+							"value": "d6ef3ec8-2528-43cb-805e-af7f7ec971f7",
+							"description": "Custom header"
+						},
+						{
+							"name": "x-runtime",
+							"key": "x-runtime",
+							"value": "0.097232",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"responseTime": 121,
+					"body": "{\"errors\":{\"phone_number\":[\"has already been taken\"],\"email\":[\"has already been taken\"]}}"
+				}
+			]
+		},
+		{
+			"name": "Create user Api",
+			"request": {
+				"url": "localhost:3000/users",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user[first_name]",
+							"value": "ahmed",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "user[last_name]",
+							"value": "ali",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "user[avatar]",
+							"value": "",
+							"description": "",
+							"type": "file"
+						},
+						{
+							"key": "user[birth_date]",
+							"value": "1992-05-20",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "user[gender]",
+							"value": "male",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "user[phone_number]",
+							"value": "+201100363195",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "user[email]",
+							"value": "joe2@doe.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "user[country_code]",
+							"value": "us",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "user[password]",
+							"value": "7amada",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "A non friendly url for user creation\nBody:\nmandatory:\nuser[first_name] : string\nuser[:last_name] :string\nuser[:phone_number] :string, unique\nuser[:avatar] :file , png, jpeg, jpg\nuser[:country_code] :string\nuser[:gender] :string\nuser[:password]\noptional:\nuser[email] :string, unique"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Status Api",
+			"request": {
+				"url": "localhost:3000/statuses",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1MjA1OTM3NTF9.84pN3EzqC2REn2_bB-0lvEqQxgJwA1cFW_ORkSI1mdg",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "status[status]",
+							"value": "I am Happy",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "phone_number",
+							"value": "+201100363194",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Header: \nAuthorization: string, authentication token for user\nBody:\nphone_number: string\nstatus: string"
+			},
+			"response": [
+				{
+					"id": "2f059090-1cba-4800-98a8-cf560252d328",
+					"name": "Success Create Status Api Response",
+					"originalRequest": {
+						"url": "localhost:3000/statuses",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE1MjA2OTQ4MTN9.ix4WoK_XRz8rSrY_SjQkAScErzVk7BigQh5rcYIWktg",
+								"description": "",
+								"warning": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status[status]",
+									"value": "I am Happy",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "+201100363195",
+									"description": "",
+									"type": "text"
+								}
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "cache-control",
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "etag",
+							"key": "etag",
+							"value": "W/\"279d5b6ad8fee883aebbd71a6cc668a4\"",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"name": "location",
+							"key": "location",
+							"value": "http://localhost:3000/statuses/5",
+							"description": "Used in redirection, or when a new resource has been created."
+						},
+						{
+							"name": "transfer-encoding",
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "x-request-id",
+							"key": "x-request-id",
+							"value": "8580bead-7df2-4a84-9c2f-51e972702c97",
+							"description": "Custom header"
+						},
+						{
+							"name": "x-runtime",
+							"key": "x-runtime",
+							"value": "0.332602",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"responseTime": 372,
+					"body": "{\"id\":5,\"status\":\"I am Happy\",\"user_id\":4,\"created_at\":\"2018-03-09T15:28:42.000Z\",\"updated_at\":\"2018-03-09T15:28:42.000Z\"}"
+				},
+				{
+					"id": "770e0944-98da-40db-bb22-caffbfde5bcc",
+					"name": "Phone Number Fail Create Status Api Response",
+					"originalRequest": {
+						"url": "localhost:3000/statuses",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE1MjA2OTQ4MTN9.ix4WoK_XRz8rSrY_SjQkAScErzVk7BigQh5rcYIWktg",
+								"description": "",
+								"warning": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status[status]",
+									"value": "I am Happy",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "+201100363194",
+									"description": "",
+									"type": "text"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "cache-control",
+							"key": "cache-control",
+							"value": "no-cache",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "transfer-encoding",
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "x-request-id",
+							"key": "x-request-id",
+							"value": "2e762d77-412a-4537-8618-fe583c8e3a86",
+							"description": "Custom header"
+						},
+						{
+							"name": "x-runtime",
+							"key": "x-runtime",
+							"value": "0.003598",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"responseTime": 34,
+					"body": "{\"error\":\"Incorrect Phone Number\"}"
+				},
+				{
+					"id": "0b77d7e3-3925-4bf3-8598-19f07fbcd264",
+					"name": "Auth-Token Fail Create Status Api Response",
+					"originalRequest": {
+						"url": "localhost:3000/statuses",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1d2VyX2lkIjo0LCJleHAiOjE1MjA2OTQ4MTN9.ix4WoK_XRz8rSrY_SjQkAScErzVk7BigQh5rcYIWktg",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status[status]",
+									"value": "I am Happy",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "+201100363195",
+									"description": "",
+									"type": "text"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "cache-control",
+							"key": "cache-control",
+							"value": "no-cache",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "transfer-encoding",
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "x-request-id",
+							"key": "x-request-id",
+							"value": "44ea8630-b37d-4066-bb75-6a38c43d43e8",
+							"description": "Custom header"
+						},
+						{
+							"name": "x-runtime",
+							"key": "x-runtime",
+							"value": "0.003164",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"responseTime": 36,
+					"body": "{\"error\":\"Not Authorized\"}"
+				}
+			]
+		}
+	]
+}
